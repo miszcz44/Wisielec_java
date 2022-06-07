@@ -14,6 +14,10 @@ public class Game extends Word {
         this.lives = lives;
     }
 
+    public void setLives(int lives) {
+        this.lives = lives;
+    }
+
     public void PrintTheCurrentStateOfWord(String content){
             String[] the_Word_Character_By_Character = content.split("");
             for(String letter : the_Word_Character_By_Character){
@@ -69,5 +73,9 @@ public class Game extends Word {
         }
         return false;
 
+    }
+
+    public void loseLife(){
+        this.lives -= 1;
     }
 }

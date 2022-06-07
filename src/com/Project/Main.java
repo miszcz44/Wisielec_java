@@ -13,10 +13,10 @@ public class Main {
         String random_word = hangman_Words.get(random.nextInt(hangman_Words.size()));
 
         System.out.println("Enter how many lives do you want to have:");
-        int lives = scanner.nextInt();
+        int lifes = scanner.nextInt();
         scanner.nextLine();
 
-        Game game = new Game(lives, random_word.length(), random_word);
+        Game game = new Game(lifes, random_word.length(), random_word);
 
         while(1==1){
             game.setCorrectLetters(0);
@@ -26,7 +26,13 @@ public class Main {
             while(!game.AnalyzeTheLetter(letter)) {
                 letter = scanner.nextLine();
             }
-            game.addUsedCharacter(letter);
+            if(random_word.indexOf(letter) == -1){
+                System.out.println("Letter not in word");
+                game.loseLife();
+            }
+            else {
+                game.addUsedCharacter(letter);
+            }
         }
     }
 }
