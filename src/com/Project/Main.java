@@ -60,9 +60,9 @@ public class Main {
                 if (random_word.indexOf(letter) == -1) {
                     System.out.println("Letter not in word");
                     game.loseLife();
-                } else {
-                    game.addUsedCharacter(letter);
                 }
+                game.addUsedCharacter(letter);
+
 
             }
         }

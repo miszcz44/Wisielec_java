@@ -20,17 +20,23 @@ public class Game extends Word {
     }
 
     public void PrintTheCurrentStateOfWord(String content){
-            String[] the_Word_Character_By_Character = content.split("");
-            for(String letter : the_Word_Character_By_Character){
-                if(this.used_Characters.contains(letter)) {
-                    System.out.print(letter);
-                    this.correctLetters += 1;
-                }
-                else {
-                    System.out.print("_");
-                }
-
+        String[] the_Word_Character_By_Character = content.split("");
+        for(String letter : the_Word_Character_By_Character){
+            if(this.used_Characters.contains(letter)) {
+                System.out.print(letter);
+                this.correctLetters += 1;
             }
+            else {
+                System.out.print("_");
+            }
+
+        }
+        System.out.println();
+        System.out.printf("%d lives left\n", this.lives);
+        System.out.println("Used characters:");
+        for(String usedCharacter : this.used_Characters){
+            System.out.print(usedCharacter + " ");
+        }
         System.out.println();
     }
 
@@ -68,7 +74,7 @@ public class Game extends Word {
             return true;
         }
         if(this.lives == 0){
-            System.out.println("Bad luck.");
+            System.out.println("Bad luck. The word was " + this.content);
             return true;
         }
         return false;
