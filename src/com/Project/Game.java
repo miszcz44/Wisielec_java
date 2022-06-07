@@ -34,16 +34,19 @@ public class Game extends Word {
     }
 
     public boolean AnalyzeTheLetter(String letter){
-        boolean flak = true;
         if(letter.length() != 1){
             System.out.println("You need to enter exactly one english alphabet letter. Try again");
-            flak = false;
+            return false;
         }
         else if(Character.isLetter(letter.charAt(0)) == false){
             System.out.println("You need to enter an english alphabet letter. Try again");
-            flak = false;
+            return false;
         }
-        return flak;
+        else if(this.used_Characters.contains(letter)){
+            System.out.println("You already entered this letter. Try again");
+            return false;
+        }
+        return true;
     }
 
     public int getCorrectLetters() {
