@@ -7,6 +7,7 @@ import java.util.List;
 public class Game extends Word {
     private int lives;
     private List<String> used_Characters = new ArrayList();
+    private int correctLetters = 0;
 
     public Game(int lives, int length, String content) {
         super(length, content);
@@ -18,6 +19,7 @@ public class Game extends Word {
             for(String letter : the_Word_Character_By_Character){
                 if(this.used_Characters.contains(letter)) {
                     System.out.print(letter);
+                    this.correctLetters += 1;
                 }
                 else {
                     System.out.print("_");
@@ -36,6 +38,18 @@ public class Game extends Word {
             flak = false;
         }
         return flak;
+    }
+
+    public int getCorrectLetters() {
+        return correctLetters;
+    }
+
+    public void setCorrectLetters(int correctLetters) {
+        this.correctLetters = correctLetters;
+    }
+
+    public void addUsedCharacter(String letter){
+        this.used_Characters.add(letter);
     }
 
 }
