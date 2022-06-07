@@ -3,6 +3,7 @@ package com.Project;
 import javax.sound.midi.Soundbank;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Game extends Word {
     private int lives;
@@ -77,4 +78,6 @@ public class Game extends Word {
     public void loseLife(){
         this.lives -= 1;
     }
+
+
 }

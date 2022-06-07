@@ -4,6 +4,21 @@ import java.util.*;
 
 public class Main {
 
+    public static int integerVerification() {
+        Scanner scan = new Scanner(System.in);
+        int theInt = -1;
+        while (true) {
+            String theString = scan.nextLine();
+            try {
+                theInt = Integer.parseInt(theString);
+                break;
+            } catch (NumberFormatException ne) {
+                System.out.println("Enter an integer. Try again.");
+            }
+        }
+        return theInt;
+    }
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
@@ -15,14 +30,17 @@ public class Main {
             String random_word = hangman_Words_Modifiable.get(random.nextInt(hangman_Words_Modifiable.size()));
             hangman_Words_Modifiable.remove(random_word);
             System.out.println("1.Play\n2.Exit");
-            int userChoice = scanner.nextInt();
-            if(userChoice == 2){
+            String userChoice = scanner.nextLine();
+            while(userChoice.equals("1") && userChoice.equals("2")){
+                System.out.println("Enter either 1 or 2. Try again");
+                userChoice = scanner.nextLine();
+            }
+            if(userChoice.equals("2")){
                 break;
             }
 
             System.out.println("Enter how many lives do you want to have:");
-            int lifes = scanner.nextInt();
-            scanner.nextLine();
+            int lifes = integerVerification();
 
             Game game = new Game(lifes, random_word.length(), random_word);
 
