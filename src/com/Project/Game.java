@@ -24,7 +24,9 @@ public class Game extends Word {
                 else {
                     System.out.print("_");
                 }
-        }
+
+            }
+        System.out.println();
     }
 
     public boolean AnalyzeTheLetter(String letter){
@@ -52,4 +54,20 @@ public class Game extends Word {
         this.used_Characters.add(letter);
     }
 
+    public int getLives() {
+        return lives;
+    }
+
+    public boolean checkIfItIsover(){
+        if(this.correctLetters == this.content.length()){
+            System.out.println("Congratz.");
+            return true;
+        }
+        if(this.lives == 0){
+            System.out.println("Bad luck.");
+            return true;
+        }
+        return false;
+
+    }
 }

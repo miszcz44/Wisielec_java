@@ -18,9 +18,10 @@ public class Main {
 
         Game game = new Game(lives, random_word.length(), random_word);
 
-        while(lives != 0 && game.getCorrectLetters() != random_word.length()){
+        while(1==1){
             game.setCorrectLetters(0);
             game.PrintTheCurrentStateOfWord(random_word);
+            game.checkIfItIsover();
             String letter = scanner.nextLine();
             while(!game.AnalyzeTheLetter(letter)) {
                 letter = scanner.nextLine();

@@ -1,6 +1,6 @@
 package com.Project;public class Word {
     private int length;
-    private String content;
+    protected String content;
 
     public int getLength() {
         return length;
