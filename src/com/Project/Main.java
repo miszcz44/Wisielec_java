@@ -21,7 +21,9 @@ public class Main {
         while(1==1){
             game.setCorrectLetters(0);
             game.PrintTheCurrentStateOfWord(random_word);
-            game.checkIfItIsover();
+            if(game.checkIfItIsover()){
+                break;
+            }
             String letter = scanner.nextLine();
             while(!game.AnalyzeTheLetter(letter)) {
                 letter = scanner.nextLine();
