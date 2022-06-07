@@ -15,6 +15,8 @@ public class Main {
 
         game.PrintTheCurrentStateOfWord(random_word);
         String letter = scanner.nextLine();
-        game.AnalyzeTheLetter(letter);
+        while(!game.AnalyzeTheLetter(letter)){
+            letter = scanner.nextLine();
+        }
     }
 }
