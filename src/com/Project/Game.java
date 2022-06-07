@@ -49,10 +49,6 @@ public class Game extends Word {
         return true;
     }
 
-    public int getCorrectLetters() {
-        return correctLetters;
-    }
-
     public void setCorrectLetters(int correctLetters) {
         this.correctLetters = correctLetters;
     }
